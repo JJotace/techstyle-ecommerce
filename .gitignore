@@ -17,3 +17,5 @@ venv/
 *.tmp
 *.egg-info/
 dist/
+.env
+instance/
