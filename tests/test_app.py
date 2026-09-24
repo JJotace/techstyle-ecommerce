@@ -30,5 +30,5 @@ def client(mock_db):
 def test_home_page(client, mock_db):
     """Test that home page loads successfully"""
     rv = client.get("/")
-    assert rv.status_code == 500
+    assert rv.status_code == 200
     mock_db.execute.assert_any_call("SELECT * FROM products ORDER BY id", ())
