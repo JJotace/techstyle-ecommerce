@@ -13,3 +13,6 @@ SQLAlchemy
 gunicorn
 python-dotenv
 requests
+pytest
+pytest-mock==3.15.0
+flake8
