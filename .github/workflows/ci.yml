@@ -37,3 +37,18 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run tests
         run: pytest tests/ -v --tb=short
+
+
+  sonarqube:
+    name: SonarQube Scan
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v4
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
